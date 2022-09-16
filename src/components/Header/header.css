@@ -1,0 +1,37 @@
+.header{
+
+}
+
+.main-title{
+
+}
+
+.side-title{
+    
+}
+
+.main-title{
+    color: var(--red);
+}
+
+.side-title{
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+   .main-title{
+    font-size: var(--large-font-mobile);
+   }
+   .side-title{
+    font-size: var(--side-main-mobile);
+   } 
+}
+
+@media screen and (max-width: 1440px) {
+    .main-title{
+        font-size: var(--large-font-desktop);
+    }
+    .side-title{
+        font-size: var(--side-main-desktop);
+    }
+}

@@ -1,3 +1,10 @@
-:root {
-  
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root{
+  font-family: 'Ubuntu', sans-serif;
+  --red: #AA1E1E;
+  --large-font-mobile: 24px;
+  --large-font-desktop: 34px;
+  --side-main-desktop: 20px;
+  --side-main-mobile: 14px;
 }

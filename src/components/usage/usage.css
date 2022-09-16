@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+}
+
+.usage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.usage-title {
+  font-weight: 700;
+}
+
+.usage-box {
+  background-color: #FFDDDD;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 2px solid #AA1E1E;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+  text-overflow: clip;
+}

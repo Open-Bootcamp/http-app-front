@@ -1,10 +1,9 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Routes
 } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import CodePage from './pages/CodePage';
 import NotFound from './pages/NotFound';
 import Header from './components/Header/Header';

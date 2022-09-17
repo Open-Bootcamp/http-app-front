@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import SearchBar from '../components/SearchBar/SearchBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import Usage from '../../components/Usage/Usage';
+import './home.css';
 
 const Home = () => {
   const [searchCode, setSearchCode] = useState('');
@@ -21,8 +23,11 @@ const Home = () => {
 
   return (
     <div className="App">
-      <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
-      <div style={{ display: 'flex', flexFlow: 'wrap' }}>
+      <div className='action-bars'>
+        <Usage/>
+        <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
+      </div>
+      <div style={{ display: 'flex', flexFlow: 'wrap', width: '70%' }}>
       {searchCode === ''
         ? codes.map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
         : codes.filter(item => item.includes(searchCode)).map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)

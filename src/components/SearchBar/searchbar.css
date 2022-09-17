@@ -45,5 +45,7 @@
 }
 
 @media screen and(min-width: 768px) {
-        
+    .searchbar{
+        min-width: 300px;
+    }
 }

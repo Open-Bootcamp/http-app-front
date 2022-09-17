@@ -1,36 +1,24 @@
-import { useEffect, useState } from 'react';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom';
+import Home from './pages/Home';
+import CodePage from './pages/CodePage';
+import NotFound from './pages/NotFound';
 import Header from './components/Header/Header';
-import SearchBar from './components/SearchBar/SearchBar';
 
 function App () {
-  const [searchCode, setSearchCode] = useState('');
-
-  const codes = ['100', '101', '200', '202', '301', '404', '500'];
-
-  useEffect(() => {
-    console.log('Do something after counter has changed', searchCode);
-  }, [searchCode]);
-
-  const searchHTTPCode = code => {
-    setSearchCode(code);
-    console.log(searchCode);
-  };
-
-
   return (
-    <div className="App">
-      <Header/>
-      <SearchBar onSearch={searchHTTPCode}/>
-      {/* TODO: hacer un simulador de las cards y pasar el code como props
-      */}
-      <div style={{ display: 'flex', flexFlow: 'wrap' }}>
-      {searchCode === ''
-        ? codes.map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
-        : codes.filter(item => item.includes(searchCode)).map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
-      }
-      </div>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/:id" element={<CodePage />} />
+        <Route path="/not-found" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 

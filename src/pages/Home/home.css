@@ -1,0 +1,13 @@
+.action-bars{
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .action-bars{
+        flex-flow: row;
+        justify-content: space-between;
+        margin-right: 16px;
+    }
+}

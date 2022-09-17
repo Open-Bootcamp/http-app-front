@@ -1,6 +1,5 @@
-import React from "react";
-import Logo from "../../assets/images/cat-modem-removebg.png";
-import "./header.css";
+import Logo from '../../assets/images/cat-modem-removebg.png';
+import './header.css';
 
 const Header = () => {
   return (

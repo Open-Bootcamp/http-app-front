@@ -1,0 +1,49 @@
+.search-box{
+    display: flex;
+    flex-flow: row;
+    margin-left: 16px;
+}
+
+.searchbar, .search-button{
+    border-radius: 12px;
+}
+
+.searchbar{
+    border: 2px solid var(--red);
+    width: 225px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.search-button{
+    background: none;
+    padding: 8px;
+    height: 40px;
+    margin: 0 16px;
+    width: 88px;
+    font-family: 'Ubuntu', sans-serif;
+    border: 2px solid black;
+}
+
+.search-icon{
+  margin: 4px;
+}
+
+.searchbar-input{
+    border: 0px;
+    width: 85%;
+    height: 28px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-right: 5px;
+}
+
+.searchbar-input:focus{
+    outline: none;
+}
+
+@media screen and(min-width: 768px) {
+        
+}

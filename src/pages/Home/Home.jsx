@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Usage from '../../components/Usage/Usage';
+import Card from '../../components/Card/Card';
 import './home.css';
 
 const Home = () => {
@@ -22,15 +23,15 @@ const Home = () => {
   };
 
   return (
-    <div className="App">
+    <div className='App'>
       <div className='action-bars'>
         <Usage/>
         <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
       </div>
-      <div style={{ display: 'flex', flexFlow: 'wrap', width: '70%' }}>
+      <div style={{ display: 'flex', flexFlow: 'wrap', marginTop: '25px', padding: '8px', justifyContent: 'space-around' }}>
       {searchCode === ''
-        ? codes.map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
-        : codes.filter(item => item.includes(searchCode)).map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
+        ? codes.map(el => <Card key={el} style={{ margin: '0 10px' }} code={el}/>)
+        : codes.filter(item => item.includes(searchCode)).map(el => <Card key={el} style={{ margin: '0 10px' }} code={el}/>)
       }
       </div>
     </div>

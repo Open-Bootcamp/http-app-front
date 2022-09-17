@@ -1,0 +1,49 @@
+.code-card{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    margin: 16px;
+    padding: 8px;
+}
+.code-card-img{
+    width: 160px;
+    height: 150px;
+    border-radius: 50%;
+}
+.card-shadow{
+    visibility: hidden;
+}
+
+.code-card:hover{
+    transform: translate(0, -20px);
+    transition: ease-in-out 0.4s;
+    cursor: pointer;
+}
+
+.code-card:hover div{
+    background-color: black;
+    opacity: 0.4;
+    box-shadow: currentColor;
+    height: 8px;
+    width: 80%;
+    border-radius: 75%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 320px) {
+    .code-card-title{
+        font-size: var(--large-font-mobile);
+        font-weight: bold;
+        color: var(--red);
+        margin-bottom: 5px;
+    }
+    .code-title{
+        font-size: var(--side-main-desktop);
+        font-weight: bold;
+        color: var(--red);
+        margin-top: 5px;
+
+    }
+}

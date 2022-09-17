@@ -14,7 +14,7 @@ function Usage ({ code }) {
         <span onClick={handleClick}><HiClipboard /></span>
         <span>https://http.cat/{code || '[status_code]'}</span>
       </div>
-      <p><strong>Note:</strong> If you need an extension at the end of the URL just add .jpg.</p>
+      <p className='usage-note'><strong>Note:</strong> If you need an extension at the end of the URL just add .jpg.</p>
     </div>
   );
 }

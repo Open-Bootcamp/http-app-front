@@ -8,11 +8,13 @@ import CodePage from './pages/CodePage';
 import NotFound from './pages/NotFound';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import { ButtonFilter } from './components/ButtonFilter/ButtonFilter';
 
 function App () {
   return (
     <Router>
       <Header />
+      <ButtonFilter />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/:id" element={<CodePage />} />

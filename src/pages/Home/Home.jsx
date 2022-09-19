@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Usage from '../../components/Usage/Usage';
+import Card from '../../components/Card/Card';
 import './home.css';
+import Data from '../../api/cat-codes.json';
 
 const Home = () => {
   const [searchCode, setSearchCode] = useState('');
   const [isValidCode, setIsValidCode] = useState(false);
-
-  const codes = ['100', '101', '200', '202', '301', '404', '500'];
 
   useEffect(() => {
     setIsValidCode(validateCode());
@@ -18,19 +18,25 @@ const Home = () => {
   };
 
   const validateCode = () => {
-    return codes.includes(searchCode);
+    return Data.codes.filter(item => item.code.toString().includes(searchCode)).length > 0;
+  };
+
+  const filterCards = () => {
+    return Data.codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>);
   };
 
   return (
-    <div className="App">
+    <div className='App'>
       <div className='action-bars'>
         <Usage/>
         <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
       </div>
-      <div style={{ display: 'flex', flexFlow: 'wrap', width: '70%' }}>
-      {searchCode === ''
-        ? codes.map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
-        : codes.filter(item => item.includes(searchCode)).map(el => <h1 key={el} style={{ margin: '0 10px' }}>{el}</h1>)
+      <div className='cards-section'>
+      {!isValidCode
+        ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>
+        : searchCode === ''
+          ? Data.codes.map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>)
+          : filterCards()
       }
       </div>
     </div>

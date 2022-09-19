@@ -1,0 +1,46 @@
+{
+    "codes":[
+        {
+            "code": 100,
+            "title": "Continue",
+            "description": "Esta es una descripción",
+            "image": "https://cdn.theatlantic.com/thumbor/W544GIT4l3z8SG-FMUoaKpFLaxE=/0x131:2555x1568/1600x900/media/img/mt/2017/06/shutterstock_319985324/original.jpg"
+        },
+        {
+            "code": 101,
+            "title": "Switching Protocols",
+            "description": "Esta es una descripción",
+            "image": "https://www.rd.com/wp-content/uploads/2021/03/ShortStack_265726429_1_Kirsten_Grubb_MLedit.jpg"
+        },
+        {
+            "code": 200,
+            "title": "Ok",
+            "description": "Esta es una descripción",
+            "image": "https://www.incimages.com/uploaded_files/image/1024x576/getty_513189787_110007.jpg"
+        },
+        {
+            "code": 201,
+            "title": "Created",
+            "description": "Esta es una descripción",
+            "image": "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?cs=srgb&dl=pexels-pixabay-45201.jpg&fm=jpg"
+        },
+        {
+            "code": 301,
+            "title": "Moved Permanently",
+            "description": "Esta es una descripción",
+            "image": "https://www.top5.com/wp-content/uploads/2018/04/Funny-Cats-9.jpg"
+        },
+        {
+            "code": 404,
+            "title": "Not Found",
+            "description": "Esta es una descripción",
+            "image": "https://media1.popsugar-assets.com/files/thumbor/YX-2J4ndcYxiFDtqpJ0Ed8NkMfM/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2014/08/08/878/n/1922507/9ed5cdef48c5ef69_thumb_temp_image32304521407524949/i/Funny-Cat-GIFs.jpg"
+        },
+        {
+            "code": 500,
+            "title": "Interal Server Error",
+            "description": "Esta es una descripción",
+            "image": "https://image.slidesharecdn.com/funnycatvideosplease-150909144248-lva1-app6892/85/funny-cat-videos-please-3-320.jpg?cb=1441809803"
+        }
+    ]
+}

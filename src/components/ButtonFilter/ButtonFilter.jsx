@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./buttonFilter.css";
 
 const tiposCode = [
-  {value:"all", text: "All", fill:"#ffffff", stroke: "#AA1E1E"},
-  {value:"10x", text: "10X", fill:"#CBC7FF", stroke: "#120A68"},
-  {value:"20x", text: "20X", fill:"#AAE9AC", stroke: "#083F0E"},
-  {value:"30x", text: "30X", fill:"#F2F3A6", stroke: "#7D8610"},
-  {value:"40x", text: "40X", fill:"#FFD699", stroke: "#8B4410"},
-  {value:"50x", text: "50X", fill:"#FACACA", stroke: "#AA1E1E"}
+  {value:"all", text: "All", fill:"#ffffff", stroke: "#AA1E1E", color: "#AA1E1E"},
+  {value:"10x", text: "10X", fill:"#CBC7FF", stroke: "#120A68", color: "#000000"},
+  {value:"20x", text: "20X", fill:"#AAE9AC", stroke: "#083F0E", color: "#000000"},
+  {value:"30x", text: "30X", fill:"#F2F3A6", stroke: "#7D8610", color: "#000000"},
+  {value:"40x", text: "40X", fill:"#FFD699", stroke: "#8B4410", color: "#000000"},
+  {value:"50x", text: "50X", fill:"#FACACA", stroke: "#AA1E1E", color: "#000000"}
 ]
 
 const ButtonFilter = () => {
@@ -38,7 +38,7 @@ const ButtonFilter = () => {
         tiposCode.map(tipo => (
           <button
             key={tipo.value}
-            style={{border: `2px solid ${tipo.stroke}`, backgroundColor: `${tipo.fill}`}}
+            style={{border: `2px solid ${tipo.stroke}`, backgroundColor: `${tipo.fill}`, color: `${tipo.color}`}}
             className="btn-code"
           >
             {tipo.text}

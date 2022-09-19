@@ -14,6 +14,7 @@ function App () {
   return (
     <Router>
       <Header />
+      <ButtonFilter />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/:id" element={<CodePage />} />

@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import CodePage from './pages/CodePage';
 import NotFound from './pages/NotFound';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App () {
   return (
@@ -17,6 +18,7 @@ function App () {
         <Route path="/:id" element={<CodePage />} />
         <Route path="/not-found" element={<NotFound />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }

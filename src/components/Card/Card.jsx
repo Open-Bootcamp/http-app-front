@@ -1,28 +1,32 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './card.css';
 
-const Card = ({ code }) => {
+const Card = ({ codeElement }) => {
   const navigate = useNavigate();
 
   const seeCodeDetails = () => {
-    navigate(`/${code}`);
+    navigate(`/${codeElement.code}`);
   };
+
+  useEffect(() => {
+    console.log(codeElement);
+  }, [codeElement]);
 
   return (
         <div className='code-card' onClick={seeCodeDetails}>
-           <h3 className='code-card-title'>{code}</h3>
-           <img src="https://cdn.theatlantic.com/thumbor/W544GIT4l3z8SG-FMUoaKpFLaxE=/0x131:2555x1568/1600x900/media/img/mt/2017/06/shutterstock_319985324/original.jpg" alt={code + '-cat'} className='code-card-img'/>
-           <p className='code-title'>Title</p>
+           <h3 className='code-card-title'>{codeElement.code}</h3>
+           <img src={codeElement.image} alt={codeElement.code + '-cat'} className='code-card-img'/>
+           <p className='code-title'>{codeElement.title}</p>
            <div className='card-shadow'>
-            ok
            </div>
         </div>
   );
 };
 
 Card.propTypes = {
-  code: PropTypes.string
+  codeElement: PropTypes.object
 };
 
 export default Card;

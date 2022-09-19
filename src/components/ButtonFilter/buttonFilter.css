@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+}
+.select {
+    padding: 16px;
+}
+select {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    select {
+        display: block;
+        width: 135px;
+        height: 36px;
+        background-color: #FFDDDD;
+        border: 2px solid var(--red);
+        border-radius: 12px;
+        font-size: var(--side-main-mobile);
+    }
+    
+}

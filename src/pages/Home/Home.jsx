@@ -1,0 +1,46 @@
+import { useEffect, useState } from 'react';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import Usage from '../../components/Usage/Usage';
+import Card from '../../components/Card/Card';
+import './home.css';
+import Data from '../../api/cat-codes.json';
+
+const Home = () => {
+  const [searchCode, setSearchCode] = useState('');
+  const [isValidCode, setIsValidCode] = useState(false);
+
+  useEffect(() => {
+    setIsValidCode(validateCode());
+  }, [searchCode]);
+
+  const searchHTTPCode = code => {
+    setSearchCode(code);
+  };
+
+  const validateCode = () => {
+    return Data.codes.filter(item => item.code.toString().includes(searchCode)).length > 0;
+  };
+
+  const filterCards = () => {
+    return Data.codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>);
+  };
+
+  return (
+    <div className='App'>
+      <div className='action-bars'>
+        <Usage/>
+        <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
+      </div>
+      <div className='cards-section'>
+      {!isValidCode
+        ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>
+        : searchCode === ''
+          ? Data.codes.map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>)
+          : filterCards()
+      }
+      </div>
+    </div>
+  );
+};
+
+export default Home;

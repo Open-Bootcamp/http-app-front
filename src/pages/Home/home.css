@@ -1,0 +1,20 @@
+.action-bars{
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+}
+.cards-section{
+    display: flex;
+    flex-flow: wrap;
+    margin: 35px 0;
+    padding: 8px;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 768px) {
+    .action-bars{
+        flex-flow: row;
+        justify-content: space-between;
+        margin-right: 16px;
+    }
+}

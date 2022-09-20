@@ -9,11 +9,13 @@ import NotFound from './pages/NotFound/NotFound';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Data from './api/cat-codes.json';
+import { ButtonFilter } from './components/ButtonFilter/ButtonFilter';
 
 function App () {
   return (
     <Router>
       <Header />
+      <ButtonFilter />
       <Routes>
         <Route exact path="/" element={<Home codes={Data.codes}/>} />
         <Route path="/:id" element={<CodePage codes={Data.codes}/>} />

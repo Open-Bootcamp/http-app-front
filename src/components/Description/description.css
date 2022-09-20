@@ -1,0 +1,46 @@
+.description-container {
+  display: grid;
+  grid-template-areas: "title" "img" "text" "usage";
+  place-items: center;
+  gap: 16px;
+  padding: 16px;
+  font-size: var(--side-main-mobile);
+}
+
+.description-title {
+  grid-area: title;
+  font-size: var(--large-font-mobile);
+  color: var(--red);
+}
+
+.description-img {
+  grid-area: img;
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.description-text {
+  grid-area: text;
+}
+
+.usage-container {
+  grid-area: usage;
+}
+
+@media screen and (min-width: 768px) {
+  .description-container {
+    grid-template-areas: "title title" "img text" "usage usage";
+    font-size: var(--side-main-desktop);
+  }
+
+  .description-title {
+    font-size: var(--large-font-desktop);
+  }
+
+  .description-img {
+    width: 300px;
+    height: 300px;
+  }
+}

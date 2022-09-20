@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: row;
     margin-left: 16px;
+    width: 95%;
 }
 
 .searchbar, .search-button{
@@ -10,7 +11,7 @@
 
 .searchbar{
     border: 2px solid var(--red);
-    width: 225px;
+    width: 90%;
     height: 36px;
     display: flex;
     flex-direction: row;
@@ -34,7 +35,7 @@
 
 .searchbar-input{
     border: 0px;
-    width: 85%;
+    width: 80%;
     height: 28px;
     font-family: 'Ubuntu', sans-serif;
     margin-right: 5px;
@@ -44,8 +45,9 @@
     outline: none;
 }
 
-@media screen and(min-width: 768px) {
-    .searchbar{
-        min-width: 300px;
+@media screen and (min-width: 768px) {
+    .search-box{
+        margin-top: 1.5%;
+        width: 40%;
     }
 }

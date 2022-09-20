@@ -4,6 +4,7 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import Usage from '../../components/Usage/Usage';
 import Card from '../../components/Card/Card';
 import './home.css';
+import { ButtonFilter } from '../../components/ButtonFilter/ButtonFilter';
 
 const Home = ({ codes }) => {
   const [searchCode, setSearchCode] = useState('');
@@ -31,6 +32,7 @@ const Home = ({ codes }) => {
         <Usage/>
         <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
       </div>
+      <ButtonFilter />
       <div className='cards-section'>
       {!isValidCode
         ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>

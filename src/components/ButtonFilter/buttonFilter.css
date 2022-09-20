@@ -9,11 +9,18 @@ select {
     display: block;
     width: 135px;
     height: 36px;
-    background-color: #FFDDDD;
     border: 2px solid var(--red);
     border-radius: 12px;
+    font-family: 'Ubuntu', sans-serif;
     font-size: var(--side-main-mobile);
+    font-weight: bold;
+    padding: 5px 8px;
 }
+
+select option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
 .btn-code {
     display: none;
 }
@@ -32,12 +39,12 @@ select {
         display: block;
         min-width: 100px;
         max-width: 157px;
-        width: 15%;
+        width: 8%;
         height: 47px;
         border-radius: 25px;
         cursor: pointer;
         font-weight: 700;
-        font-size: 36px;
+        font-size: var(--side-main-desktop);
         font-family: 'Ubuntu';
     }
 

@@ -1,36 +1,37 @@
-import React, { useState } from "react";
-import "./buttonFilter.css";
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import './buttonFilter.css';
 
 const tiposCode = [
-  {value:"all", text: "All", fill:"#ffffff", stroke: "#AA1E1E", color: "#AA1E1E"},
-  {value:"10x", text: "10X", fill:"#CBC7FF", stroke: "#120A68", color: "#000000"},
-  {value:"20x", text: "20X", fill:"#AAE9AC", stroke: "#083F0E", color: "#000000"},
-  {value:"30x", text: "30X", fill:"#F2F3A6", stroke: "#7D8610", color: "#000000"},
-  {value:"40x", text: "40X", fill:"#FFD699", stroke: "#8B4410", color: "#000000"},
-  {value:"50x", text: "50X", fill:"#FACACA", stroke: "#AA1E1E", color: "#000000"}
-]
+  { value: '', text: 'All', fill: '#ffffff', stroke: '#AA1E1E', color: '#AA1E1E' },
+  { value: '10', text: '10X', fill: '#CBC7FF', stroke: '#120A68', color: '#000000' },
+  { value: '2', text: '20X', fill: '#AAE9AC', stroke: '#083F0E', color: '#000000' },
+  { value: '3', text: '30X', fill: '#F2F3A6', stroke: '#7D8610', color: '#000000' },
+  { value: '4', text: '40X', fill: '#FFD699', stroke: '#8B4410', color: '#000000' },
+  { value: '5', text: '50X', fill: '#FACACA', stroke: '#AA1E1E', color: '#000000' }
+];
 
-const ButtonFilter = () => {
-
+const ButtonFilter = ({ onClick }) => {
   const [state, setState] = useState(tiposCode[0]);
 
   const handleChange = (event) => {
-    setState({value: event.target.value});
-  }
+    onClick(event.target.value);
+    setState({ value: event.target.value });
+  };
   return (
     <div className="codes">
-      <select 
-        value={state.value} 
+      <select
+        value={state.value}
         onChange={handleChange}
       >
         {tiposCode.map((tipo, key) => (
-          <option 
+          <option
             value={tipo.value}
             key={key}
           >
             {tipo.text}
           </option>
-          ))
+        ))
         }
       </select>
 
@@ -38,18 +39,23 @@ const ButtonFilter = () => {
         tiposCode.map(tipo => (
           <button
             key={tipo.value}
-            style={{border: `2px solid ${tipo.stroke}`, backgroundColor: `${tipo.fill}`, color: `${tipo.color}`}}
+            style={{ border: `2px solid ${tipo.stroke}`, backgroundColor: `${tipo.fill}`, color: `${tipo.color}` }}
             className="btn-code"
+            onClick={() => onClick(tipo.value)}
           >
             {tipo.text}
           </button>
-          )
+        )
         )
       }
-      
+
     </div>
 
   );
 };
 
-export { ButtonFilter } ;
+ButtonFilter.propTypes = {
+  onClick: PropTypes.func
+};
+
+export { ButtonFilter };

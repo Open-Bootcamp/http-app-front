@@ -45,9 +45,14 @@
     outline: none;
 }
 
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .search-box{
+        width: 72%;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .search-box{
-        margin-top: 1.5%;
         width: 40%;
     }
 }

@@ -32,7 +32,7 @@ const Home = ({ codes }) => {
         <Usage/>
         <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
       </div>
-      <ButtonFilter />
+      <ButtonFilter onClick={searchHTTPCode}/>
       <div className='cards-section'>
       {!isValidCode
         ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>

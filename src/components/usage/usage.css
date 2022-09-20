@@ -21,8 +21,7 @@
   border-radius: 25px;
   border: 2px solid #AA1E1E;
   display: flex;
-  justify-content: center;
-  gap: 16px;
+  justify-content: space-between;
   overflow: hidden;
   text-overflow: clip;
   font-size: 14px;
@@ -34,10 +33,22 @@
 
 @media screen and (min-width: 576px) {
   .usage-title {
-    font-size: 24px;
+    font-size: var(--large-font-mobile);
   }
 
   .usage-box, .usage-note {
     font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .usage-container{
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .usage-container{
+    width: 40%;
   }
 }

@@ -4,6 +4,7 @@ import Usage from '../../components/Usage/Usage';
 import Card from '../../components/Card/Card';
 import './home.css';
 import Data from '../../api/cat-codes.json';
+import { ButtonFilter } from '../../components/ButtonFilter/ButtonFilter';
 
 const Home = () => {
   const [searchCode, setSearchCode] = useState('');
@@ -31,6 +32,7 @@ const Home = () => {
         <Usage/>
         <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
       </div>
+      <ButtonFilter />
       <div className='cards-section'>
       {!isValidCode
         ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>

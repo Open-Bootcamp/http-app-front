@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Usage from '../../components/Usage/Usage';
 import Card from '../../components/Card/Card';
 import './home.css';
-import Data from '../../api/cat-codes.json';
 
-const Home = () => {
+const Home = ({ codes }) => {
   const [searchCode, setSearchCode] = useState('');
   const [isValidCode, setIsValidCode] = useState(false);
 
@@ -18,11 +18,11 @@ const Home = () => {
   };
 
   const validateCode = () => {
-    return Data.codes.filter(item => item.code.toString().includes(searchCode)).length > 0;
+    return codes.filter(item => item.code.toString().includes(searchCode)).length > 0;
   };
 
   const filterCards = () => {
-    return Data.codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>);
+    return codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>);
   };
 
   return (
@@ -35,12 +35,21 @@ const Home = () => {
       {!isValidCode
         ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>
         : searchCode === ''
-          ? Data.codes.map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>)
+          ? codes.map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>)
           : filterCards()
       }
       </div>
     </div>
   );
+};
+
+Home.propTypes = {
+  codes: PropTypes.arrayOf(PropTypes.shape({
+    code: PropTypes.number,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string
+  })).isRequired
 };
 
 export default Home;

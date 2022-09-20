@@ -5,6 +5,7 @@
     text-align: center;
     margin: 16px;
     padding: 25px;
+    align-items: center;
 }
 .code-card-img{
     width: 160px;
@@ -12,7 +13,12 @@
     border-radius: 50%;
 }
 .card-shadow{
-    visibility: hidden;
+    opacity: 0;
+    height: 8px;
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 0;
 }
 
 .code-card:hover{
@@ -22,17 +28,11 @@
 }
 
 .code-card:hover .card-shadow{
-    visibility: visible;
-    display: block;
     background-color: black;
     opacity: 0.2;
     box-shadow: currentColor;
-    height: 8px;
-    width: 80%;
     border-radius: 75%;
-    margin: auto;
-    margin-top: 10px;
-    transition: ease-in-out 0.4s;
+    transition: ease-in-out 0.5s;
 }
 
 @media screen and (min-width: 320px) {

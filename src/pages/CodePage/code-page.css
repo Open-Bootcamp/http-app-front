@@ -1,0 +1,6 @@
+.control-buttons{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 18px;
+}

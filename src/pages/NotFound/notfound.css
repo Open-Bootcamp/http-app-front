@@ -1,0 +1,51 @@
+.nav-button {
+    display: flex;
+    flex-flow: row;
+    background: #FFDDDD;
+    border: 2px solid var(--red);
+    border-radius: 25px;
+    width: 90px;
+    height: 29px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.nav-button:hover {
+    cursor: pointer;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.hidden-l {
+    display: block;
+}
+
+.hidden-m {
+    display: none;
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .hidden-l {
+        display: none;
+    }
+    .hidden-m {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-button {
+        height: 40px;
+        width: 166px;
+        font-size: 24px;
+        font-weight: 400;
+    }
+}

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Navigate } from 'react-router-dom';
 import NavigationButton from '../../components/NavigationButton/NavigationButton';
+import Description from '../../components/Description/Description';
 import './code-page.css';
 
 const CodePage = ({ codes }) => {
@@ -21,7 +22,10 @@ const CodePage = ({ codes }) => {
   };
 
   return (
-        <div>
+        <>
+          { currentCodeIndex === -1
+            ? <Navigate to='/not-found' />
+            : <div>
             <div className='control-buttons'>
               {currentCodeIndex !== 0
                 ? <NavigationButton type='back' isHidden={false} onClick={handleBack}/>
@@ -32,12 +36,12 @@ const CodePage = ({ codes }) => {
                 ? <NavigationButton type='next' isHidden={false} onClick={handleNext}/>
                 : <NavigationButton type='next' isHidden={true} onClick={handleNext}/>}
             </div>
-            <div>
-              {codes[currentCodeIndex].code}
-              {codes[currentCodeIndex].title}
-              {codes[currentCodeIndex].description}
-            </div>
+            <Description {...codes[currentCodeIndex]}
+            />
         </div>
+
+          }
+        </>
   );
 };
 

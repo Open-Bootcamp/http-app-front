@@ -21,6 +21,7 @@
   border-radius: 25px;
   border: 2px solid #AA1E1E;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   overflow: hidden;
   text-overflow: clip;

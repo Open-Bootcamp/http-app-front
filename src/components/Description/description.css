@@ -23,6 +23,8 @@
 
 .description-text {
   grid-area: text;
+  max-width: 520px;
+  text-align: justify;
 }
 
 .usage-container {
@@ -32,6 +34,7 @@
 @media screen and (min-width: 768px) {
   .description-container {
     grid-template-areas: "title title" "img text" "usage usage";
+    grid-template-columns: 1fr 2fr;
     font-size: var(--side-main-desktop);
   }
 

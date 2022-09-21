@@ -1,16 +1,10 @@
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import './searchbar.css';
 
 const SearchBar = ({ onSearch, code, isValidCode }) => {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(code);
-  }, [code]);
-
   const navigateToCode = () => {
     if (isValidCode) {
       navigate(`/${code}`);

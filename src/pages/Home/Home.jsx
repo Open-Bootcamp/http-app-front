@@ -12,7 +12,7 @@ const Home = ({ codes }) => {
 
   useEffect(() => {
     setIsValidCode(validateCode());
-  }, [searchCode]);
+  }, [searchCode, codes]);
 
   const searchHTTPCode = code => {
     setSearchCode(code);
@@ -23,7 +23,7 @@ const Home = ({ codes }) => {
   };
 
   const filterCards = () => {
-    return codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>);
+    return codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} codeElement={el}/>);
   };
 
   return (
@@ -35,9 +35,9 @@ const Home = ({ codes }) => {
       <ButtonFilter onClick={searchHTTPCode}/>
       <div className='cards-section'>
       {!isValidCode
-        ? <h2 style={{ margin: '5% 0' }}>Lo sentimos, al parecer no existe el código que buscas :/</h2>
+        ? <h2 className='not-found-message'>Lo sentimos, al parecer no existe el código que buscas :/</h2>
         : searchCode === ''
-          ? codes.map(el => <Card key={el.code} style={{ margin: '0 10px' }} codeElement={el}/>)
+          ? codes.map(el => <Card key={el.code} codeElement={el}/>)
           : filterCards()
       }
       </div>

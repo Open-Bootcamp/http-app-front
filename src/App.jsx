@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom';
+import Home from './pages/Home/Home';
+import CodePage from './pages/CodePage/CodePage';
+import NotFound from './pages/NotFound/NotFound';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import axios from 'axios';
+import Spinner from './components/Spinner/Spinner';
 
-function App() {
-  const [count, setCount] = useState(0)
+function App () {
+  const [codes, setCodes] = useState([]);
+  useEffect(() => {
+    getCats();
+  }, []);
+
+  const getCats = async () => {
+    try {
+      const response = await axios.get('https://http-app-back-production.up.railway.app/cats');
+      console.log(response.data);
+      setCodes(() => response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+   <Router>
+      <Header />
+      {
+      codes.length > 0
+        ? <Routes>
+        <Route exact path="/" element={<Home codes={codes}/>} />
+        <Route path="/:id" element={<CodePage codes={codes}/>} />
+        <Route path="/not-found" element={<NotFound />} />
+      </Routes>
+        : <Spinner/>
+      }
+      <Footer/>
+    </Router>
+
+  );
 }
 
-export default App
+export default App;

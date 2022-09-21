@@ -1,0 +1,51 @@
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--red);
+  padding: 16px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.social-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon {
+  fill: white;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.1s linear;
+}
+
+#openbootcamp {
+  width: 96px;
+  transition: transform 0.1s linear;
+}
+
+.icon:hover, #openbootcamp:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    font-size: 16px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  #openbootcamp {
+    width: 128px;
+  }
+
+}

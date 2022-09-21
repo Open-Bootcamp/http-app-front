@@ -3,8 +3,8 @@ import { useState } from 'react';
 import './buttonFilter.css';
 
 const tiposCode = [
-  { value: '', text: 'All', fill: '#ffffff', stroke: '#AA1E1E', color: '#AA1E1E' },
-  { value: '10', text: '10X', fill: '#CBC7FF', stroke: '#120A68', color: '#000000' },
+  { value: '', text: 'Todos', fill: '#ffffff', stroke: '#AA1E1E', color: '#AA1E1E' },
+  { value: '1', text: '10X', fill: '#CBC7FF', stroke: '#120A68', color: '#000000' },
   { value: '2', text: '20X', fill: '#AAE9AC', stroke: '#083F0E', color: '#000000' },
   { value: '3', text: '30X', fill: '#F2F3A6', stroke: '#7D8610', color: '#000000' },
   { value: '4', text: '40X', fill: '#FFD699', stroke: '#8B4410', color: '#000000' },
@@ -15,7 +15,7 @@ const ButtonFilter = ({ onClick }) => {
   const [state, setState] = useState(tiposCode[0]);
 
   const handleChange = (event) => {
-    onClick(event.target.value);
+    onClick(event.target.value, false);
     setState({ value: event.target.value });
   };
   return (

@@ -34,7 +34,7 @@
 
 @media screen and (min-width: 576px) {
   .usage-title {
-    font-size: var(--large-font-mobile);
+    font-size: var(--side-main-desktop);
   }
 
   .usage-box, .usage-note {

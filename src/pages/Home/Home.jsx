@@ -9,13 +9,15 @@ import { ButtonFilter } from '../../components/ButtonFilter/ButtonFilter';
 const Home = ({ codes }) => {
   const [searchCode, setSearchCode] = useState('');
   const [isValidCode, setIsValidCode] = useState(false);
+  const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
     setIsValidCode(validateCode());
   }, [searchCode, codes]);
 
-  const searchHTTPCode = code => {
+  const searchHTTPCode = (code, isSearched) => {
     setSearchCode(code);
+    setIsSearched(isSearched);
   };
 
   const validateCode = () => {
@@ -23,7 +25,11 @@ const Home = ({ codes }) => {
   };
 
   const filterCards = () => {
-    return codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} codeElement={el}/>);
+    if (isSearched) {
+      return codes.filter(item => item.code.toString().includes(searchCode)).map(el => <Card key={el.code} codeElement={el}/>);
+    } else {
+      return codes.filter(item => item.code.toString()[0] === searchCode).map(el => <Card key={el.code} codeElement={el}/>);
+    }
   };
 
   return (

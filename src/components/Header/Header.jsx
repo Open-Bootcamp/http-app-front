@@ -9,7 +9,7 @@ const Header = () => {
       </div>
       <div className="titles-info">
           <h1 className="main-title">OB Catsponses</h1>
-          <p className="side-title">Customize your HTTP responses with these cool & funny cats</p>
+          <p className="side-title">Personaliza tus respuestas HTTP con estos curiosos y graciosos gatos</p>
       </div>
     </div>
   );

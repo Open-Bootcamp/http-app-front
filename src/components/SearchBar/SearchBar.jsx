@@ -27,7 +27,7 @@ const SearchBar = ({ onSearch, code, isValidCode }) => {
           className="searchbar-input"
           type="text"
           placeholder="Ingresa el código HTTP"
-          onChange={event => onSearch(event.target.value)}
+          onChange={event => onSearch(event.target.value, true)}
           onKeyPress={handleKeyPress}
         />
       </div>

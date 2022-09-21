@@ -3,8 +3,9 @@ import { BiSearch } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import './searchbar.css';
 
-const SearchBar = ({ onSearch, code, isValidCode }) => {
+const SearchBar = ({ onSearch, code, isValidCode, btnHide }) => {
   const navigate = useNavigate();
+
   const navigateToCode = () => {
     if (isValidCode) {
       navigate(`/${code}`);
@@ -19,6 +20,14 @@ const SearchBar = ({ onSearch, code, isValidCode }) => {
     }
   };
 
+  const dNone = {
+    display: "none"
+  };
+
+  const dBlock = {
+    display: "block"
+  };
+
   return (
     <div className="search-box">
       <div className="searchbar">
@@ -31,7 +40,7 @@ const SearchBar = ({ onSearch, code, isValidCode }) => {
           onKeyPress={handleKeyPress}
         />
       </div>
-      <button className="search-button" onClick={navigateToCode}>Buscar</button>
+      <button className="search-button" style={btnHide ? dNone : dBlock} onClick={navigateToCode}>Buscar</button>
     </div>
   );
 };

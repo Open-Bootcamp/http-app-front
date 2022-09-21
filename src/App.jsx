@@ -21,8 +21,9 @@ function App () {
   const getCats = async () => {
     try {
       const response = await axios.get('https://http-app-back-production.up.railway.app/cats');
-      console.log(response.data);
-      setCodes(() => response.data);
+      setTimeout(() => {
+        setCodes(() => response.data);
+      }, 800);
     } catch (error) {
       console.error(error);
     }

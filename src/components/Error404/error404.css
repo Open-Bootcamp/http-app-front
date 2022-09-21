@@ -34,9 +34,9 @@
     }
 
     .parraf {
-        width: 56%;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 37px;
+        width: 80%;
+        font-weight: bold;
+        font-size: var(--side-main-desktop);
+        line-height: 25px;
     }
 }

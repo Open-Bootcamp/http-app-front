@@ -9,12 +9,12 @@ function Usage ({ code }) {
 
   return (
     <div className='usage-container'>
-      {!code && (<h3 className='usage-title'>Usage:</h3>)}
+      {!code && (<h3 className='usage-title'>Uso:</h3>)}
       <div className='usage-box'>
         <span onClick={handleClick}><HiClipboard /></span>
         <span>https://http.cat/{code || '[status_code]'}</span>
       </div>
-      {!code && (<p className='usage-note'><strong>Note:</strong> If you need an extension at the end of the URL just add .jpg.</p>)}
+      {!code && (<p className='usage-note'><strong>Nota:</strong> Si necesitas una extensión al final de la URL solo añade .jpg.</p>)}
     </div>
   );
 }

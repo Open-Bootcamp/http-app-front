@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
-import Usage from '../../components/Usage/Usage';
+import Usage from '../../components/usage/Usage';
 import Card from '../../components/Card/Card';
 import './home.css';
 import { ButtonFilter } from '../../components/ButtonFilter/ButtonFilter';

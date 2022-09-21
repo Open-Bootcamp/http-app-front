@@ -21,11 +21,11 @@ const SearchBar = ({ onSearch, code, isValidCode, btnHide }) => {
   };
 
   const dNone = {
-    display: "none"
+    display: 'none'
   };
 
   const dBlock = {
-    display: "block"
+    display: 'block'
   };
 
   return (
@@ -48,7 +48,8 @@ const SearchBar = ({ onSearch, code, isValidCode, btnHide }) => {
 SearchBar.propTypes = {
   onSearch: PropTypes.func,
   code: PropTypes.string,
-  isValidCode: PropTypes.bool
+  isValidCode: PropTypes.bool,
+  btnHide: PropTypes.string
 };
 
 export default SearchBar;

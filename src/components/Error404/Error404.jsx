@@ -2,7 +2,6 @@
 import './error404.css';
 
 const Error404 = () => {
-
   return (
     <div>
       <div className="error">
@@ -13,7 +12,6 @@ const Error404 = () => {
         <p className='parraf parraf_2'>No te preocupes, siempre podrás regresar a casa, o buscar un nuevo arenero...
        </p>
       </div>
-      
     </div>
   );
 };

@@ -2,24 +2,38 @@
     display: flex;
     flex-flow: column-reverse;
     align-items: center;
-    margin-bottom: 2%;
-}
-.cards-section{
-    display: flex;
-    flex-flow: wrap;
-    margin: 2% 0;
-    padding: 8px;
-    justify-content: space-around;
+    margin-bottom: 5px;
 }
 
-@media screen and (min-width: 425px) {
-    
+.cards-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8px;
+    justify-items: center;
+    align-items: center;
+}
+
+.not-found-message{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) {
     .action-bars{
         flex-flow: row;
         justify-content: space-between;
-        margin: 1% 4% 2%;
+    }
+
+    .cards-section{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .cards-section{
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(auto-fill, 300px);
     }
 }

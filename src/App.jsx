@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,19 +9,40 @@ import CodePage from './pages/CodePage/CodePage';
 import NotFound from './pages/NotFound/NotFound';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Data from './api/cat-codes.json';
+import axios from 'axios';
+import Spinner from './components/Spinner/Spinner';
 
 function App () {
+  const [codes, setCodes] = useState([]);
+  useEffect(() => {
+    getCats();
+  }, []);
+
+  const getCats = async () => {
+    try {
+      const response = await axios.get('https://http-app-back-production.up.railway.app/cats');
+      console.log(response.data);
+      setCodes(() => response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <Router>
+   <Router>
       <Header />
-      <Routes>
-        <Route exact path="/" element={<Home codes={Data.codes}/>} />
-        <Route path="/:id" element={<CodePage codes={Data.codes}/>} />
+      {
+      codes.length > 0
+        ? <Routes>
+        <Route exact path="/" element={<Home codes={codes}/>} />
+        <Route path="/:id" element={<CodePage codes={codes}/>} />
         <Route path="/not-found" element={<NotFound />} />
       </Routes>
+        : <Spinner/>
+      }
       <Footer/>
     </Router>
+
   );
 }
 

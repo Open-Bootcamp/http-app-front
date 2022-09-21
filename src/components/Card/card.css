@@ -3,8 +3,7 @@
     flex-flow: column;
     justify-content: center;
     text-align: center;
-    margin: 5px 16px;
-    padding: 8px;
+    margin: 8px;
     align-items: center;
     max-width: 100px;
 }
@@ -25,16 +24,18 @@
 }
 .card-shadow{
     visibility: hidden;
-    margin-top: 10px;
     height: 8px;
     width: 80%;
     background-color: white;
 }
 
 .code-card:hover{
+    cursor: pointer;
+}
+
+.code-card:hover .code-card-img, .code-card:hover .code-title, .code-card:hover .code-card-title{
     transform: translate(0, -20px);
     transition: ease-in-out 0.4s;
-    cursor: pointer;
 }
 
 .code-card:hover .card-shadow{
@@ -44,7 +45,7 @@
     opacity: 0.2;
     box-shadow: currentColor;
     border-radius: 75%;
-    margin: auto;
+    margin: 2px;
     transition: ease-in-out 0.4s;
 }
 
@@ -59,7 +60,7 @@
 
     }
     .code-card{
-        max-width: 100%;
+        max-width: 185px;
     }
 
     .code-card-img{

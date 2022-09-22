@@ -1,13 +1,13 @@
-*{
-    margin: 0;
-}
-
 .header{
     align-items: center;
-    margin-top: 5px;
     display: flex;
     flex-direction: row;
     padding: 16px;
+}
+
+.header-img {
+    width: 120px;
+    cursor: pointer;
 }
 
 .titles-info{

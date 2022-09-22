@@ -1,15 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../assets/images/cat-modem-removebg.png';
 import './header.css';
 
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <div className="header">
-      <div className="col-md">
-        <img alt="sleepy-cat-in-modem" src={Logo} width="120px" />
-      </div>
+      <img alt="sleepy-cat-in-modem" src={Logo} className="header-img" onClick={() => navigate('/')} />
+
       <div className="titles-info">
-          <h1 className="main-title">OB Catsponses</h1>
-          <p className="side-title">Personaliza tus respuestas HTTP con estos curiosos y graciosos gatos</p>
+        <h1 className="main-title">OB Catsponses</h1>
+        <p className="side-title">Personaliza tus respuestas HTTP con estos curiosos y graciosos gatos</p>
       </div>
     </div>
   );

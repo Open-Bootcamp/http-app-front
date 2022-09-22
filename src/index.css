@@ -8,3 +8,14 @@
   --side-main-desktop: 20px;
   --side-main-mobile: 14px;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 32px;
+}
+
+* {
+  box-sizing: border-box;
+}

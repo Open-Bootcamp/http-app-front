@@ -22,26 +22,26 @@ const CodePage = ({ codes }) => {
   };
 
   return (
-        <>
-          { currentCodeIndex === -1
-            ? <Navigate to='/not-found' />
-            : <div>
-            <div className='control-buttons'>
-              {currentCodeIndex !== 0
-                ? <NavigationButton type='back' isHidden={false} onClick={handleBack}/>
-                : <NavigationButton type='back' isHidden={true} onClick={handleBack}/>
-              }
-              <NavigationButton type='home'/>
-              {currentCodeIndex !== codes.length - 1
-                ? <NavigationButton type='next' isHidden={false} onClick={handleNext}/>
-                : <NavigationButton type='next' isHidden={true} onClick={handleNext}/>}
-            </div>
-            <Description {...codes[currentCodeIndex]}
-            />
-        </div>
-
-          }
+    <>
+      {currentCodeIndex === -1
+        ? <Navigate to='/not-found' />
+        : <>
+          <div className='control-buttons'>
+            {currentCodeIndex !== 0
+              ? <NavigationButton type='back' isHidden={false} onClick={handleBack} />
+              : <NavigationButton type='back' isHidden={true} onClick={handleBack} />
+            }
+            <NavigationButton type='home' />
+            {currentCodeIndex !== codes.length - 1
+              ? <NavigationButton type='next' isHidden={false} onClick={handleNext} />
+              : <NavigationButton type='next' isHidden={true} onClick={handleNext} />}
+          </div>
+          <Description {...codes[currentCodeIndex]}
+          />
         </>
+
+      }
+    </>
   );
 };
 

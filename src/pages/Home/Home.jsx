@@ -8,7 +8,7 @@ import { ButtonFilter } from '../../components/ButtonFilter/ButtonFilter';
 
 const Home = ({ codes }) => {
   const [searchCode, setSearchCode] = useState('');
-  const [isValidCode, setIsValidCode] = useState(false);
+  const [isValidCode, setIsValidCode] = useState(true);
   const [isSearched, setIsSearched] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Home = ({ codes }) => {
   };
 
   return (
-    <div className='App'>
+    <>
       <div className='action-bars'>
         <Usage/>
         <SearchBar onSearch={searchHTTPCode} code={searchCode} isValidCode={isValidCode}/>
@@ -47,7 +47,7 @@ const Home = ({ codes }) => {
           : filterCards()
       }
       </div>
-    </div>
+    </>
   );
 };
 

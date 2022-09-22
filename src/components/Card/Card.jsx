@@ -12,12 +12,12 @@ const Card = ({ codeElement }) => {
   };
 
   return (
-        <div className='code-card' onClick={seeCodeDetails}>
-           <h3 className='code-card-title'>{codeElement.code}</h3>
-           <img src={codeElement.image} alt={codeElement.code + '-cat'} className='code-card-img'/>
-           <p className='code-title'>{codeElement.title}</p>
-           <div className='card-shadow'></div>
-        </div>
+    <div className='code-card' onClick={seeCodeDetails}>
+      <h3 className='code-card-title'>{codeElement.code}</h3>
+      <img src={codeElement.image} alt={codeElement.code + '-cat'} className='code-card-img' />
+      <p className='code-title'>{codeElement.title}</p>
+      <div className='card-shadow'></div>
+    </div>
   );
 };
 

@@ -1,16 +1,31 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0 16px;
+    max-width: 500px;
+    align-self: center;
+    gap: 16px;
+}
+
 .action-bars{
     display: flex;
     flex-flow: column-reverse;
     align-items: center;
-    margin-bottom: 5px;
+    gap: 16px;
+    align-self: center;
+    width: 100%;
 }
 
 .cards-section{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 8px;
     justify-items: center;
     align-items: center;
+    row-gap: 24px;
+    margin-top: 24px;
+    flex: 1;
 }
 
 .not-found-message{
@@ -20,6 +35,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .App {
+        max-width: none;
+        padding: 0 56px;
+    }
     .action-bars{
         flex-flow: row;
         justify-content: space-between;
@@ -31,9 +50,20 @@
 }
 
 @media screen and (min-width: 1024px) {
-
+    .App {
+        align-self: center;
+        width: 100%;
+        padding: 0 96px;
+    }
     .cards-section{
         grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(auto-fill, 300px);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .App {
+        max-width: 1440px;
+        width: 100%;
+        padding: 0 96px;
     }
 }

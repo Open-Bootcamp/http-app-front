@@ -3,7 +3,6 @@
     flex-flow: column;
     justify-content: center;
     text-align: center;
-    margin: 8px;
     align-items: center;
     max-width: 100px;
 }
@@ -34,7 +33,7 @@
 }
 
 .code-card:hover .code-card-img, .code-card:hover .code-title, .code-card:hover .code-card-title{
-    transform: translate(0, -20px);
+    transform: translateY(-20px);
     transition: ease-in-out 0.4s;
 }
 
@@ -45,7 +44,6 @@
     opacity: 0.2;
     box-shadow: currentColor;
     border-radius: 75%;
-    margin: 2px;
     transition: ease-in-out 0.4s;
 }
 

@@ -1,3 +1,11 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
 .nav-button {
     display: flex;
     flex-flow: row;
@@ -21,11 +29,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 30px;
+    max-width: 1024px;
+    width: 100%;
 }
 
 .hidden-l {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 .hidden-m {
@@ -38,11 +48,13 @@
     .hidden-l {
         display: none;
     }
+
     .hidden-m {
         display: flex;
         justify-content: center;
         align-items: center;
     }
+
     .nav-button {
         height: 40px;
         width: 166px;

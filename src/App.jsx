@@ -22,7 +22,7 @@ function App () {
     try {
       const response = await axios.get('https://http-app-back-production.up.railway.app/cats');
       setTimeout(() => {
-        setCodes(() => response.data);
+        setCodes(response.data);
       }, 800);
     } catch (error) {
       console.error(error);
@@ -30,18 +30,20 @@ function App () {
   };
 
   return (
-   <Router>
+    <Router>
       <Header />
       {
-      codes.length > 0
-        ? <Routes>
-        <Route exact path="/" element={<Home codes={codes}/>} />
-        <Route path="/:id" element={<CodePage codes={codes}/>} />
-        <Route path="/not-found" element={<NotFound />} />
-      </Routes>
-        : <Spinner/>
+        codes.length > 0
+          ? <div className='App'>
+            <Routes>
+              <Route exact path="/" element={<Home codes={codes} />} />
+              <Route path="/:id" element={<CodePage codes={codes} />} />
+              <Route path="/not-found" element={<NotFound />} />
+            </Routes>
+        </div>
+          : <Spinner />
       }
-      <Footer/>
+      <Footer />
     </Router>
 
   );

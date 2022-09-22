@@ -1,8 +1,8 @@
 .search-box{
     display: flex;
     flex-flow: row;
-    margin-left: 16px;
-    width: 95%;
+    width: 100%;
+    gap: 16px;
 }
 
 .searchbar, .search-button{
@@ -12,7 +12,7 @@
 .searchbar{
     border: 2px solid var(--red);
     width: 90%;
-    height: 36px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -23,7 +23,6 @@
     background: none;
     padding: 8px;
     height: 40px;
-    margin: 0 16px;
     width: 88px;
     font-family: 'Ubuntu', sans-serif;
     border: 2px solid black;
@@ -43,12 +42,6 @@
 
 .searchbar-input:focus{
     outline: none;
-}
-
-@media screen and (min-width: 425px) and (max-width: 768px) {
-    .search-box{
-        width: 72%;
-    }
 }
 
 @media screen and (min-width: 768px) {

@@ -2,7 +2,6 @@
     margin: 0;
 }
 .codes {
-    padding: 16px;
     display: block;
 }
 select {
@@ -27,7 +26,6 @@ select option:hover {
 
 @media screen and (min-width: 768px) {
     .codes {
-        padding: 16px;
         display: flex;
         justify-content: space-around;
     }

@@ -45,6 +45,9 @@
 }
 
 @media screen and (min-width: 768px) {
+    .not-found-container {
+        flex: none;
+    }
     .hidden-l {
         display: none;
     }
